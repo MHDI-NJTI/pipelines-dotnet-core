@@ -19,8 +19,8 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    publishLocation: 'pipeline'
-    artifact: '*'
+ - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
+      projects: 'XXX'
+      arguments: '-c "Release" /p:Platform="x64" /p:OutputPath="$(build.artifactStagingDirectory)\XXX"'
