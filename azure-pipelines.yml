@@ -14,6 +14,7 @@ pool:
     command: 'build'
     projects: '**/*.csproj'
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
